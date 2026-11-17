@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PRD v3 — Dari Bingung Menganalisis Saham ke Membangun NadiBursa</title>
+<title>Workshop NadiBursa</title>
 <meta name="description" content="Materi sharing session tentang literasi saham, Hermes AI sebagai asisten riset, dan proses membangun NadiBursa.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +26,7 @@
 </head>
 <body>
 <header class="top"><div class="topin"><div class="brand">NADI<span>BURSA</span> / WORKSHOP</div>
-<nav class="topnav" aria-label="Navigasi materi"><a href="#hero">Pembuka</a><a href="#alur">Alur cerita</a><a href="#hermes">Memahami Hermes</a><a href="#nadibursa">NadiBursa</a><a href="#qna">Q&amp;A</a><a href="#closing">Penutup</a></nav>
+<nav class="topnav" aria-label="Navigasi materi"><a href="#hero">Pembuka</a><a href="#alur">Alur cerita</a><a href="#nadibursa">NadiBursa</a><a href="#qna">Q&amp;A</a><a href="#closing">Penutup</a></nav>
 <div class="toplinks"><button onclick="window.print()">Cetak / PDF</button></div></div></header>
 <div class="wrap">
 <main>
@@ -47,33 +47,6 @@
 <div class="card green"><div class="num">04 · HASIL</div><h3>Mengembangkan NadiBursa</h3><p>Dari kebutuhan pribadi, berkembang menjadi platform belajar dan alat bantu riset agar proses analisis lebih mudah dipelajari dan diulang.</p></div>
 </div>
 <div class="callout green"><b>Kalimat transisi:</b> “Saya tidak mencari mesin yang selalu benar. Saya mencari cara agar alasan di balik sebuah keputusan bisa dijelaskan, diuji, dan diperbaiki.”</div>
-<h3>Alokasi waktu sesi 120 menit</h3>
-<div class="timeline"><div class="timebox"><strong>10 MENIT</strong><span>Cerita dan masalah awal</span></div><div class="timebox"><strong>20 MENIT</strong><span>Memahami Hermes AI</span></div><div class="timebox"><strong>20 MENIT</strong><span>Dasar analisis saham</span></div><div class="timebox"><strong>30 MENIT</strong><span>Praktik dengan AI</span></div><div class="timebox"><strong>40 MENIT</strong><span>NadiBursa, diskusi, Q&amp;A</span></div></div>
-</section>
-
-<section class="section" id="hermes">
-<div class="kicker">Bagian A · Konsep utama</div><h2>Hermes AI itu apa?</h2>
-<p class="lead">Dalam sesi ini, Hermes diperkenalkan sebagai AI agent yang dapat dikonfigurasi untuk membantu menjalankan alur kerja, bukan sekadar tempat bertanya seperti chatbot biasa.</p>
-<div class="grid2">
-<div class="card"><h3>Chatbot</h3><p>Menjawab berdasarkan instruksi dan konteks yang diberikan dalam percakapan. Jika data saham tidak disertakan atau tidak memiliki akses sumber, jawaban bisa tidak mutakhir atau keliru.</p><span class="tag">Tanya → Jawab</span></div>
-<div class="card green"><h3>AI agent seperti Hermes</h3><p>Dapat diberi peran, instruksi, tools, dan alur kerja. Jika integrasi memang tersedia dan diizinkan, agent dapat mengambil data, menjalankan langkah analisis, lalu menyusun laporan.</p><span class="tag green">Instruksi → Tools → Hasil kerja</span></div>
-</div>
-<h3>Bagian yang harus dibedakan saat presentasi</h3>
-<div class="tablewrap"><table><thead><tr><th>Komponen</th><th>Fungsinya</th><th>Contoh di riset saham</th></tr></thead><tbody>
-<tr><td>Model AI</td><td>Memahami instruksi dan menyusun analisis.</td><td>Menjelaskan rasio, merangkum temuan, menguji argumen.</td></tr>
-<tr><td>Instruksi / persona</td><td>Menentukan peran, batasan, dan format jawaban.</td><td>Berperan sebagai asisten riset yang skeptis dan tidak memberi sinyal.</td></tr>
-<tr><td>Tools / integrasi</td><td>Menghubungkan agent ke sumber atau tindakan tertentu.</td><td>Mengambil data harga/laporan jika koneksi tersebut benar-benar dipasang.</td></tr>
-<tr><td>Data</td><td>Bahan yang dianalisis; harus diketahui sumber dan waktunya.</td><td>Harga penutupan, volume, laporan keuangan, corporate action.</td></tr>
-<tr><td>Evaluasi manusia</td><td>Memeriksa hasil, asumsi, dan keputusan akhir.</td><td>Mencocokkan angka dengan sumber asli sebelum mengambil keputusan.</td></tr>
-</tbody></table></div>
-<div class="callout"><b>Catatan demo:</b> Jangan mengklaim Hermes otomatis memiliki akses data IDX, broker, Telegram, atau web. Tampilkan hanya integrasi yang benar-benar sudah dipasang dan diuji. Jika belum ada akses data, berikan dataset contoh secara manual.</div>
-<h3>Prinsip kerja asisten riset saham</h3>
-<div class="steps">
-<div class="step"><div><b>Terima pertanyaan dan tujuan</b><p>Contoh: “Bantu saya memeriksa apakah data emiten ini cukup untuk dianalisis.”</p></div></div>
-<div class="step"><div><b>Periksa sumber dan kelengkapan data</b><p>Catat sumber, tanggal, periode laporan, satuan, dan data yang belum tersedia.</p></div></div>
-<div class="step"><div><b>Jalankan analisis sesuai aturan</b><p>Hitung rasio atau checklist berdasarkan rumus yang jelas. Jangan mengisi data kosong dengan tebakan.</p></div></div>
-<div class="step"><div><b>Keluarkan hasil beserta batasannya</b><p>Ringkasan, perhitungan, hal yang belum diketahui, dan hal yang perlu diverifikasi manusia.</p></div></div>
-</div>
 </section>
 
 <section class="section" id="nadibursa">
