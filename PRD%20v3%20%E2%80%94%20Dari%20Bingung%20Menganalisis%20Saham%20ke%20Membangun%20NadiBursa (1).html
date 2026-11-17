@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PRD v3 — Dari Bingung Menganalisis Saham ke Membangun NadiBursa</title>
+<meta name="description" content="Materi sharing session tentang literasi saham, Hermes AI sebagai asisten riset, dan proses membangun NadiBursa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f8f6;--paper:#fff;--ink:#14251d;--muted:#65766d;--line:#dfe8e2;--green:#167447;--green2:#e8f4ec;--amber:#94600b;--amber2:#fff5df;--red:#b42318;--red2:#fff0ee;--blue:#245ca6;--blue2:#edf4ff;--shadow:0 8px 28px rgba(20,37,29,.06);--r:16px;--sans:"Plus Jakarta Sans",system-ui,sans-serif;--mono:"JetBrains Mono",monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.7 var(--sans)}a{color:var(--green);text-decoration:none}a:hover{text-decoration:underline}button,input{font:inherit}button{cursor:pointer}.top{position:sticky;top:0;z-index:10;background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.topin{max-width:1200px;margin:auto;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font:700 14px var(--mono);letter-spacing:-.04em}.brand span{color:var(--green)}.toplinks{display:flex;gap:8px;align-items:center}.toplinks a,.toplinks button{font-size:12px;font-weight:700;border:1px solid var(--line);border-radius:9px;padding:7px 11px;background:white;color:var(--ink)}.toplinks button{background:var(--green);color:white;border-color:var(--green)}.wrap{max-width:1200px;margin:auto;padding:28px 22px 80px;display:grid;grid-template-columns:230px minmax(0,1fr);gap:34px}.side{position:sticky;top:75px;align-self:start;max-height:calc(100vh - 95px);overflow:auto;padding:10px 0}.side small{display:block;color:#91a198;font:600 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;margin:18px 10px 7px}.side a{display:block;padding:7px 10px;border-radius:8px;color:#53645b;font-size:12.5px;font-weight:600}.side a:hover{background:var(--green2);text-decoration:none;color:var(--green)}main{min-width:0}.hero{background:linear-gradient(135deg,#103d2a,#167447 72%,#27865a);color:white;padding:44px;border-radius:22px;box-shadow:var(--shadow);position:relative;overflow:hidden}.eyebrow{font:600 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.75}.hero h1{font-size:clamp(30px,4vw,48px);line-height:1.13;letter-spacing:-.05em;margin:15px 0}.hero p{max-width:760px;color:#e0f1e6;font-size:16px}.quote{margin-top:25px;padding:16px 18px;border-left:3px solid #a8e1bc;background:#ffffff12;border-radius:0 10px 10px 0;font-size:18px;font-weight:700}.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}.pill{border:1px solid #ffffff42;background:#ffffff12;padding:6px 10px;border-radius:99px;font-size:11px;font-weight:700}.section{margin-top:26px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:30px;box-shadow:var(--shadow)}.kicker{font:700 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--green)}h2{font-size:25px;letter-spacing:-.04em;line-height:1.25;margin:7px 0 10px}h3{font-size:17px;letter-spacing:-.025em;margin:22px 0 8px}h4{font-size:14px;margin:0 0 6px}p{margin:8px 0;color:#4e6056}ul,ol{padding-left:21px;color:#4e6056}li{margin:5px 0}.lead{font-size:16px;color:#43564b}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:16px 0}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}.card{border:1px solid var(--line);border-radius:13px;padding:17px;background:#fff}.card.soft{background:#f7faf8}.card.green{background:var(--green2);border-color:#cde5d5}.card.amber{background:var(--amber2);border-color:#f0dfb6}.card.red{background:var(--red2);border-color:#f1d1cc}.card.blue{background:var(--blue2);border-color:#d5e3f8}.num{font:700 11px var(--mono);color:var(--green)}.muted{color:var(--muted);font-size:13px}.callout{padding:14px 16px;border-radius:11px;background:var(--amber2);border:1px solid #f0dfb6;color:#69480e;margin:15px 0}.callout.green{background:var(--green2);border-color:#cde5d5;color:#24553a}.callout.red{background:var(--red2);border-color:#f1d1cc;color:#8c2820}.tablewrap{overflow:auto;margin:14px 0}table{width:100%;border-collapse:collapse;font-size:13px;min-width:520px}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#66776e;background:#f7faf8}td{color:#43564b}.tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.04em;border-radius:99px;padding:3px 7px;background:#edf2ef;color:#53645b}.tag.green{background:var(--green2);color:var(--green)}.tag.amber{background:var(--amber2);color:var(--amber)}.tag.red{background:var(--red2);color:var(--red)}.steps{counter-reset:step;display:grid;gap:10px;margin:15px 0}.step{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}.step:before{counter-increment:step;content:counter(step,decimal-leading-zero);font:700 12px var(--mono);color:var(--green);background:var(--green2);width:32px;height:32px;display:grid;place-items:center;border-radius:9px}.lab{border:1px solid var(--line);border-radius:14px;padding:18px;margin:16px 0;background:#fbfdfb}.labhead{display:flex;align-items:center;justify-content:space-between;gap:12px}.labhead h3{margin:0}.fieldgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:13px 0}.field label{display:block;font-size:11px;font-weight:700;color:#65766d;margin-bottom:5px}.field input{width:100%;border:1px solid #d6e1da;border-radius:8px;padding:10px 11px;background:white;color:var(--ink);font:13px var(--mono)}.results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:12px}.result{padding:12px;background:white;border:1px solid var(--line);border-radius:10px}.result small{display:block;color:var(--muted);font-size:10px}.result strong{display:block;font:700 16px var(--mono);margin-top:4px}.btn{border:0;background:var(--green);color:white;border-radius:8px;padding:9px 13px;font-weight:700;font-size:12px}.btn.secondary{background:white;color:var(--ink);border:1px solid var(--line)}.answer{display:none;margin-top:12px;padding:12px;border-radius:9px;background:var(--green2);color:#24553a;font-size:13px}.answer.show{display:block}.quiz{border:1px solid var(--line);border-radius:12px;padding:15px;margin:12px 0}.quiz p{font-weight:700;color:var(--ink)}.quiz label{display:block;padding:7px 9px;border-radius:8px;color:#4e6056;font-size:13px}.quiz input{margin-right:8px}.quiz .feedback{font-size:12px;margin-top:8px;font-weight:700}.prompt{background:#13251c;color:#e2f1e7;padding:17px;border-radius:12px;white-space:pre-wrap;font:12px/1.7 var(--mono);overflow-wrap:anywhere;margin:12px 0}.copyrow{display:flex;justify-content:space-between;align-items:center;gap:10px}.timeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:16px 0}.timebox{background:#f7faf8;border:1px solid var(--line);border-radius:10px;padding:12px}.timebox strong{display:block;font:700 12px var(--mono);color:var(--green)}.timebox span{font-size:11px;color:var(--muted)}.footer{margin-top:24px;text-align:center;color:#85948b;font-size:11px}.checklist{list-style:none;padding:0}.checklist li{padding-left:27px;position:relative}.checklist li:before{content:"✓";position:absolute;left:0;top:0;color:var(--green);font-weight:800}.hide{display:none!important}
+@media(max-width:850px){.wrap{grid-template-columns:1fr;gap:8px;padding:16px}.side{position:static;display:flex;gap:5px;overflow:auto;max-height:none;padding:3px 0 10px}.side small{display:none}.side a{white-space:nowrap;border:1px solid var(--line);background:white}.hero{padding:28px}.section{padding:22px}.timeline{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.topin{padding:9px 13px}.toplinks a{display:none}.wrap{padding:12px}.hero{padding:24px 20px}.section{padding:19px}.grid2,.grid3,.fieldgrid{grid-template-columns:1fr}.results{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}.quote{font-size:16px}}
+@media print{.top,.side,.toplinks,.btn{display:none!important}.wrap{display:block;padding:0}.hero,.section{box-shadow:none;break-inside:avoid}.section{margin-top:14px}.lab{break-inside:avoid}body{background:white}}
+</style>
+<style>
+.wrap{grid-template-columns:minmax(0,1fr)!important;gap:0}
+.topnav{display:flex;gap:2px;flex:1;justify-content:center;overflow-x:auto;scrollbar-width:none}
+.topnav::-webkit-scrollbar{display:none}
+.topnav a{padding:7px 11px;border-radius:8px;font-size:12.5px;font-weight:600;color:#53645b;white-space:nowrap}
+.topnav a:hover,.topnav a.active{background:var(--green2);color:var(--green);text-decoration:none}
+@media(max-width:850px){.topin{flex-wrap:wrap;row-gap:6px}.topnav{order:3;flex-basis:100%;justify-content:flex-start;margin:0 -4px}html{scroll-padding-top:112px}}
+@media print{.topnav{display:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin"><div class="brand">NADI<span>BURSA</span> / WORKSHOP</div>
+<nav class="topnav" aria-label="Navigasi materi"><a href="#hero">Pembuka</a><a href="#alur">Alur cerita</a><a href="#hermes">Memahami Hermes</a><a href="#nadibursa">NadiBursa</a><a href="#qna">Q&amp;A</a><a href="#closing">Penutup</a></nav>
+<div class="toplinks"><button onclick="window.print()">Cetak / PDF</button></div></div></header>
+<div class="wrap">
+<main>
+<section class="hero" id="hero">
+<div class="eyebrow">Sharing session · Literasi saham & AI agent</div>
+<h1>Dari Bingung Menganalisis Saham, Mengenal Hermes AI, hingga Membangun NadiBursa</h1>
+<p>Mengubah proses memilih saham yang awalnya penuh tebakan menjadi proses riset yang lebih terstruktur, terukur, dan bisa dievaluasi.</p>
+<div class="quote">“Saya tidak menjadi lebih pintar memilih saham. Saya berhenti menebak, dan mulai membangun sistem untuk mengambil keputusan yang lebih terukur.”</div>
+<div class="meta"><span class="pill">Pemula → Menengah</span><span class="pill">Hermes AI sebagai asisten riset</span><span class="pill">Contoh praktik berbasis data</span><span class="pill">Bukan kelas rekomendasi saham</span></div>
+</section>
+
+<section class="section" id="alur">
+<div class="kicker">Bagian A · Cerita</div><h2>Perjalanan saya: dari ikut-ikutan sampai punya sistem sendiri</h2>
+<div class="grid2">
+<div class="card"><div class="num">01 · AWAL</div><h3>Mulai dari ikut-ikutan</h3><p>Mengenal saham dari obrolan, grup, atau ticker yang sedang ramai. Membeli tanpa benar-benar memahami bisnis, alasan masuk, dan rencana keluar.</p></div>
+<div class="card"><div class="num">02 · BINGUNG</div><h3>Semakin belajar, semakin banyak pertanyaan</h3><p>Belajar indikator dan strategi sekaligus. Saat untung tidak tahu penyebabnya; saat rugi tidak punya catatan untuk mengevaluasi keputusan.</p></div>
+<div class="card"><div class="num">03 · TITIK BALIK</div><h3>Mulai membangun proses</h3><p>Masalahnya bukan sekadar kurang informasi. Saya membutuhkan aturan, data yang bisa diperiksa, batas risiko, dan jurnal evaluasi.</p></div>
+<div class="card green"><div class="num">04 · HASIL</div><h3>Mengembangkan NadiBursa</h3><p>Dari kebutuhan pribadi, berkembang menjadi platform belajar dan alat bantu riset agar proses analisis lebih mudah dipelajari dan diulang.</p></div>
+</div>
+<div class="callout green"><b>Kalimat transisi:</b> “Saya tidak mencari mesin yang selalu benar. Saya mencari cara agar alasan di balik sebuah keputusan bisa dijelaskan, diuji, dan diperbaiki.”</div>
+<h3>Alokasi waktu sesi 120 menit</h3>
+<div class="timeline"><div class="timebox"><strong>10 MENIT</strong><span>Cerita dan masalah awal</span></div><div class="timebox"><strong>20 MENIT</strong><span>Memahami Hermes AI</span></div><div class="timebox"><strong>20 MENIT</strong><span>Dasar analisis saham</span></div><div class="timebox"><strong>30 MENIT</strong><span>Praktik dengan AI</span></div><div class="timebox"><strong>40 MENIT</strong><span>NadiBursa, diskusi, Q&amp;A</span></div></div>
+</section>
+
+<section class="section" id="hermes">
+<div class="kicker">Bagian A · Konsep utama</div><h2>Hermes AI itu apa?</h2>
+<p class="lead">Dalam sesi ini, Hermes diperkenalkan sebagai AI agent yang dapat dikonfigurasi untuk membantu menjalankan alur kerja, bukan sekadar tempat bertanya seperti chatbot biasa.</p>
+<div class="grid2">
+<div class="card"><h3>Chatbot</h3><p>Menjawab berdasarkan instruksi dan konteks yang diberikan dalam percakapan. Jika data saham tidak disertakan atau tidak memiliki akses sumber, jawaban bisa tidak mutakhir atau keliru.</p><span class="tag">Tanya → Jawab</span></div>
+<div class="card green"><h3>AI agent seperti Hermes</h3><p>Dapat diberi peran, instruksi, tools, dan alur kerja. Jika integrasi memang tersedia dan diizinkan, agent dapat mengambil data, menjalankan langkah analisis, lalu menyusun laporan.</p><span class="tag green">Instruksi → Tools → Hasil kerja</span></div>
+</div>
+<h3>Bagian yang harus dibedakan saat presentasi</h3>
+<div class="tablewrap"><table><thead><tr><th>Komponen</th><th>Fungsinya</th><th>Contoh di riset saham</th></tr></thead><tbody>
+<tr><td>Model AI</td><td>Memahami instruksi dan menyusun analisis.</td><td>Menjelaskan rasio, merangkum temuan, menguji argumen.</td></tr>
+<tr><td>Instruksi / persona</td><td>Menentukan peran, batasan, dan format jawaban.</td><td>Berperan sebagai asisten riset yang skeptis dan tidak memberi sinyal.</td></tr>
+<tr><td>Tools / integrasi</td><td>Menghubungkan agent ke sumber atau tindakan tertentu.</td><td>Mengambil data harga/laporan jika koneksi tersebut benar-benar dipasang.</td></tr>
+<tr><td>Data</td><td>Bahan yang dianalisis; harus diketahui sumber dan waktunya.</td><td>Harga penutupan, volume, laporan keuangan, corporate action.</td></tr>
+<tr><td>Evaluasi manusia</td><td>Memeriksa hasil, asumsi, dan keputusan akhir.</td><td>Mencocokkan angka dengan sumber asli sebelum mengambil keputusan.</td></tr>
+</tbody></table></div>
+<div class="callout"><b>Catatan demo:</b> Jangan mengklaim Hermes otomatis memiliki akses data IDX, broker, Telegram, atau web. Tampilkan hanya integrasi yang benar-benar sudah dipasang dan diuji. Jika belum ada akses data, berikan dataset contoh secara manual.</div>
+<h3>Prinsip kerja asisten riset saham</h3>
+<div class="steps">
+<div class="step"><div><b>Terima pertanyaan dan tujuan</b><p>Contoh: “Bantu saya memeriksa apakah data emiten ini cukup untuk dianalisis.”</p></div></div>
+<div class="step"><div><b>Periksa sumber dan kelengkapan data</b><p>Catat sumber, tanggal, periode laporan, satuan, dan data yang belum tersedia.</p></div></div>
+<div class="step"><div><b>Jalankan analisis sesuai aturan</b><p>Hitung rasio atau checklist berdasarkan rumus yang jelas. Jangan mengisi data kosong dengan tebakan.</p></div></div>
+<div class="step"><div><b>Keluarkan hasil beserta batasannya</b><p>Ringkasan, perhitungan, hal yang belum diketahui, dan hal yang perlu diverifikasi manusia.</p></div></div>
+</div>
+</section>
+
+<section class="section" id="nadibursa">
+<div class="kicker">Bagian A · Produk</div><h2>Dari kebutuhan pribadi menjadi NadiBursa</h2>
+<p class="lead">NadiBursa dibangun dari kebutuhan untuk belajar, menyaring informasi, dan membuat proses riset lebih terstruktur. Platform ini bukan janji profit atau grup sinyal.</p>
+<div class="grid2">
+<div class="card"><h3>NadiBursa Academy</h3><p>Materi belajar bertahap dari dasar saham, memahami perusahaan, strategi screening, broker summary, sampai psikologi dan disiplin investor.</p><a href="https://nadibursa.my.id/belajar" target="_blank" rel="noopener">Buka NadiBursa Academy ↗</a></div>
+<div class="card"><h3>Tools riset</h3><p>Contoh alat bantu seperti screener berbasis aturan, visualisasi pasar, ringkasan aliran broker, dan asisten analisis. Ketersediaan data dan fitur mengikuti implementasi aktual.</p><a href="https://nadibursa.my.id" target="_blank" rel="noopener">Buka nadibursa.my.id ↗</a></div>
+</div>
+<h3>Urutan demo produk</h3>
+<div class="steps">
+<div class="step"><div><b>Buka Academy</b><p>Tunjukkan materi dasar dan ajak peserta memilih satu topik yang belum mereka pahami.</p></div></div>
+<div class="step"><div><b>Tunjukkan alat bantu riset</b><p>Jelaskan input, aturan, output, serta batasan datanya. Jangan hanya memperlihatkan daftar saham yang lolos.</p></div></div>
+<div class="step"><div><b>Hubungkan dengan Hermes</b><p>Perlihatkan bagaimana hasil screening dapat dijadikan bahan untuk pemeriksaan lanjutan, bukan instruksi transaksi otomatis.</p></div></div>
+</div>
+</section>
+
+<section class="section" id="qna">
+<div class="kicker">Contekan fasilitator</div><h2>Q&amp;A yang mungkin muncul</h2>
+<h3>Apakah Hermes bisa memilih saham yang pasti naik?</h3><p>Tidak. AI tidak bisa menjamin pergerakan harga. Hermes dapat membantu menjalankan proses riset dan checklist berdasarkan data serta aturan yang tersedia. Risiko pasar tetap ada.</p>
+<h3>Apakah data yang diberikan ke AI aman?</h3><p>Periksa kebijakan privasi, pengaturan data, dan ketentuan layanan platform yang digunakan. Hindari mengunggah password, kode OTP, nomor rekening, data identitas, atau informasi akun sekuritas. Untuk latihan, gunakan data publik atau data simulasi yang sudah dianonimkan.</p>
+<h3>Apakah hasil analisis AI selalu benar?</h3><p>Tidak. AI dapat salah memahami data, memakai informasi yang tidak mutakhir, atau membuat kesimpulan yang tidak didukung sumber. Verifikasi angka pada sumber asli dan minta AI menunjukkan rumus serta data acuannya.</p>
+<h3>Apakah harus bisa coding untuk menggunakan AI agent?</h3><p>Tidak selalu untuk mulai menggunakan agent yang sudah tersedia. Namun, membangun integrasi, mengatur tools, mengelola data, dan memastikan keamanan sistem biasanya membutuhkan pemahaman teknis.</p>
+<h3>Apakah screening berarti harus membeli saham yang lolos?</h3><p>Tidak. Hasil screening adalah daftar kandidat untuk dianalisis lebih lanjut. Keputusan perlu mempertimbangkan kondisi perusahaan, harga, likuiditas, risiko, dan tujuan masing-masing.</p>
+<h3>Kalau data tidak tersedia bagaimana?</h3><p>Jangan menebak. Tandai data sebagai belum tersedia, cari sumber yang dapat dipercaya, atau batasi kesimpulan sesuai informasi yang ada.</p>
+</section>
+
+<section class="section" id="closing">
+<div class="kicker">Penutup</div><h2>Lima pelajaran dari proses membangun</h2>
+<div class="steps">
+<div class="step"><div><b>Mulai dari masalah nyata.</b><p>Bangun sesuatu karena ada kebutuhan yang benar-benar dirasakan.</p></div></div>
+<div class="step"><div><b>Bangun sistem, bukan ramalan.</b><p>Proses yang konsisten lebih berguna daripada mengejar prediksi yang terdengar meyakinkan.</p></div></div>
+<div class="step"><div><b>Utamakan kualitas data.</b><p>Analisis yang rapi tetap bisa salah jika inputnya keliru atau kedaluwarsa.</p></div></div>
+<div class="step"><div><b>Terbuka terhadap batasan.</b><p>Berani mengatakan “data belum cukup” adalah bagian dari analisis yang bertanggung jawab.</p></div></div>
+<div class="step"><div><b>AI adalah pengungkit, bukan pengganti penilaian.</b><p>AI membantu mempercepat pekerjaan. Manusia tetap memeriksa dan bertanggung jawab atas keputusan.</p></div></div>
+</div>
+<div class="quote" style="background:var(--green2);color:#17452e;border-left-color:var(--green)">“Saya tidak menjadi lebih pintar memilih saham. Saya berhenti menebak, dan mulai membangun sistem.”</div>
+<p style="margin-top:20px"><b>Mulai belajar:</b> <a href="https://nadibursa.my.id/belajar" target="_blank" rel="noopener">nadibursa.my.id/belajar ↗</a></p>
+<div class="callout">Disclaimer: Materi ini untuk edukasi dan literasi pasar modal, bukan ajakan atau rekomendasi membeli/menjual efek. Contoh angka dan perusahaan dalam latihan bersifat simulasi kecuali dinyatakan lain. Investasi saham memiliki risiko, termasuk kehilangan sebagian atau seluruh modal. Verifikasi data dan ketentuan terbaru dari sumber resmi sebelum mengambil keputusan.</div>
+</section>
+<div class="footer">NadiBursa Workshop · PRD v3 · Materi edukasi, bukan rekomendasi investasi</div>
+</main>
+</div>
+<script>
+(function(){const links=[...document.querySelectorAll('.topnav a')],secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+function spy(){const y=scrollY+120;let cur=0;secs.forEach((s,i)=>{if(s&&s.offsetTop<=y)cur=i});if(innerHeight+scrollY>=document.body.scrollHeight-4)cur=secs.length-1;links.forEach((a,i)=>a.classList.toggle('active',i===cur));}
+addEventListener('scroll',spy,{passive:true});spy();})();
+</script>
+</body></html>
